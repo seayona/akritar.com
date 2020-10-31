@@ -7,4 +7,5 @@ export default defineConfig({
   routes: [
     { path: '/', component: '@/pages/welcome' },
   ],
+  title: false,
 });
