@@ -1,50 +1,69 @@
-/* eslint no-undef: 0 */
-/* eslint arrow-parens: 0 */
 import React from 'react';
-import { enquireScreen } from 'enquire-js';
-import { Banner10DataSource } from '../../data.source';
-import Banner from '../../components/banner/index';
+import Gallery from "react-photo-gallery";
 import '@/style/index.less';
 
-let isMobile;
-enquireScreen((b) => {
-  isMobile = b;
-});
-
-
 export default class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isMobile,
-    };
-  }
-
-  componentDidMount() {
-    // 适配手机屏幕;
-    enquireScreen((b) => {
-      this.setState({ isMobile: !!b });
-    });
-  }
-
+  
   render() {
-    const children = [
-      <Banner
-        id="Banner1_0"
-        key="Banner1_0"
-        dataSource={Banner10DataSource}
-        isMobile={this.state.isMobile}
-      />,
+     const photos = [
+      {
+        src: "https://ui-akritar-1301852858.cos.ap-shanghai.myqcloud.com/迪士尼/迪士尼藏宝海湾8.jpg",
+        width:2,
+        height:1
+      },
+      {
+        src: "https://ui-akritar-1301852858.cos.ap-shanghai.myqcloud.com/迪士尼/迪士尼藏宝海湾.jpg",
+        width:1,
+        height:2
+      },
+      {
+        src: "https://ui-akritar-1301852858.cos.ap-shanghai.myqcloud.com/迪士尼/迪士尼藏宝海湾9.jpg",
+        width:1,
+        height:2
+      },
+      {
+        src: "https://ui-akritar-1301852858.cos.ap-shanghai.myqcloud.com/迪士尼/迪士尼藏宝海湾3.jpg",
+        width:1,
+        height:2
+      },
+      {
+        src: "https://ui-akritar-1301852858.cos.ap-shanghai.myqcloud.com/迪士尼/迪士尼藏宝海湾5.jpg",
+        width:1,
+        height:2
+      },
+      {
+        src: "https://ui-akritar-1301852858.cos.ap-shanghai.myqcloud.com/迪士尼/迪士尼藏宝海湾6.jpg",
+        width:1,
+        height:2
+      },
+      {
+        src: "https://ui-akritar-1301852858.cos.ap-shanghai.myqcloud.com/迪士尼/迪士尼藏宝海湾7.jpg",
+        width:1,
+        height:2
+      },
+      {
+        src: "https://ui-akritar-1301852858.cos.ap-shanghai.myqcloud.com/迪士尼/迪士尼藏宝海湾2.jpg",
+        width:1,
+        height:2
+      },
+      {
+        src: "https://ui-akritar-1301852858.cos.ap-shanghai.myqcloud.com/迪士尼/迪士尼钢铁侠战甲1.jpg",
+        width:1,
+        height:2
+      },
+      {
+        src: "https://ui-akritar-1301852858.cos.ap-shanghai.myqcloud.com/迪士尼/迪士尼钢铁侠战甲3.jpg",
+        width:1,
+        height:2
+      },
+      {
+        src: "https://ui-akritar-1301852858.cos.ap-shanghai.myqcloud.com/迪士尼/迪士尼七个小矮人矿车.jpg",
+        width:1,
+        height:2
+      },
     ];
     return (
-      <div
-        className="templates-wrapper"
-        ref={(d) => {
-          this.dom = d;
-        }}
-      >
-        {children}
-      </div>
+      <Gallery photos={photos} />
     );
   }
 }
